@@ -11,7 +11,7 @@ services:
       - /shares/MyCloud/TV:/MyCloud
       - /shares/MyCloud_ext/TV:/MyCloud_ext
       - /shares/MyCloudEX2/TV:/MyCloudEX2
-      - /shares/MyCloudEX2_2/TV:MyCloudEX2_2
+      - /shares/MyCloudEX2_2/TV:/MyCloudEX2_2
       - /mnt/nzb_media/Downloads:/downloads
       - /home/proxdox/nzb/sonarr/config:/config
     ports:
