@@ -21,8 +21,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/New_York
-      - CONTEXT_PATH=URL_BASE #optional
-      - JAVA_OPTS=options #optional
     volumes:
       - /home/proxdox/Music/airsonic/config:/config
       - /shares/MyCloudEX2/Music:/music
