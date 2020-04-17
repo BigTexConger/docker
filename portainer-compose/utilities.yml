@@ -1,0 +1,34 @@
+version: "2"
+services:
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+  organizr-v2:
+    image:organizrtools/organizr-v2
+    container_name: organizr-v2
+    ports:
+      - 82:80
+    environment:
+      - PGID=1000
+      - PUID=1000
+    volumes:
+      - /home/proxdox/nzb/organizrV2/config:/config
+    restart: unless-stopped
+  ombi:
+    image: linuxserver/ombi
+    container_name: ombi
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - /home/proxdox/nzb/ombi/config:/config
+    ports:
+      - 3579:3579
+    restart: unless-stopped
+    
+    
+  
