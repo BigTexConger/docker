@@ -1,0 +1,33 @@
+version: "2"
+services:
+  lidarr:
+    image: linuxserver/lidarr
+    container_name: lidarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - /home/proxdox/nzb/lidarr/config:/config
+      - /shares/MyCloudEX2/Music:/music
+      - /mnt/nzb_media/Downloads:/downloads
+    ports:
+      - 8686:8686
+    restart: unless-stopped
+  airsonic:
+    image: linuxserver/airsonic
+    container_name: airsonic
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      - CONTEXT_PATH=URL_BASE #optional
+      - JAVA_OPTS=options #optional
+    volumes:
+      - /home/proxdox/Music/airsonic/config:/config
+      - /shares/MyCloudEX2/Music:/music
+      - /home/proxdox/Music/airsonic/playlists:/playlists
+      - /shares/MyCloudEX2/Podcasts:/podcasts
+    ports:
+      - 4040:4040
+    restart: unless-stopped
