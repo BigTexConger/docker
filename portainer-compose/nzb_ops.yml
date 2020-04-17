@@ -1,7 +1,7 @@
 version: "2"
 services:
   sabnzbd:
-    image: linuxserver/sabnzbd:latest
+    image: linuxserver/sabnzbd
     container_name: sabnzbd
     restart: unless-stopped
     ports:
@@ -17,7 +17,7 @@ services:
       - PUID=1000
       - TZ=America/New_York
   hydra2:
-    image: linuxserver/hydra2:latest
+    image: linuxserver/hydra2
     container_name: hydra2
     restart: unless-stopped
     ports:
