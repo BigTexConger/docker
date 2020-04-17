@@ -1,0 +1,31 @@
+version: "2"
+services:
+  sabnzbd:
+    image: linuxserver/sabnzbd:latest
+    container_name: sabnzbd
+    restart: unless-stopped
+    ports:
+      - 8888:8080
+      - 9090:9090
+    volumes:
+      - /home/proxdox/nzb/sabnzbd/config:/config
+      - /mnt/nzb_media/Downloads:/downloads
+      - /mnt/nzb_media/Downloads-incomplete:/incomplete-downloads
+      - /home/proxdox/nzb:/nzb
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=America/New_York
+  hydra2:
+    image: linuxserver/hydra2:latest
+    container_name: hydra2
+    restart: unless-stopped
+    ports:
+      - 5076:5076
+    volumes:
+      - /home/proxdox/nzb/hydra2:/config
+      - /mnt/nzb_media/Downloads:/downloads
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=America/New_York
