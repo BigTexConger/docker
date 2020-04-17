@@ -1,0 +1,29 @@
+version: "2"
+services:
+  app:
+    image: jc21/nginx-proxy-manager:2
+    restart: always
+    ports:
+      # Public HTTP Port:
+      - 80:80
+      # Public HTTPS Port:
+      - 443:443
+      # Admin Web Port:
+      - 81:81
+    volumes:
+      # Make sure this config.json file exists as per instructions above:
+      - /home/proxdox/nginex/config.json:/app/config/production.json
+      - /home/proxdox/nginex/data:/data
+      - /home/proxdox/nginex/letsencrypt:/etc/letsencrypt
+    depends_on:
+      - db
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "npm"
+      MYSQL_DATABASE: "npm"
+      MYSQL_USER: "npm"
+      MYSQL_PASSWORD: "npm"
+    volumes:
+      - /home/proxdox/nginex/data/mysql:/var/lib/mysql
