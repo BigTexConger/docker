@@ -29,6 +29,18 @@ services:
     ports:
       - 3579:3579
     restart: unless-stopped
-    
+  tautulli:
+    image: tautulli/tautulli
+    container_name: tautulli
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - /home/proxdox/tautulli/config:/config
+     # - path to plex logs:/logs
+    ports:
+      - 8181:8181
+    restart: unless-stopped
     
   
