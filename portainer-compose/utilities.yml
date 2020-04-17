@@ -7,8 +7,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
   organizr-v2:
-    image:organizrtools/organizr-v2
-    container_name: organizrV2
+    image: organizrtools/organizr-v2
+    container_name: organizr-v2
     ports:
       - 82:80
     environment:
