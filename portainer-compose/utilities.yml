@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
   organizr-v2:
     image:organizrtools/organizr-v2
-    container_name: organizr-v2
+    container_name: organizrV2
     ports:
       - 82:80
     environment:
