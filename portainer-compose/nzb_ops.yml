@@ -8,7 +8,7 @@ services:
       - 8888:8080
       - 9090:9090
     volumes:
-      - /home/proxdox/nzb/sabnzbd/config:/config
+      - /home/plex/nzb/sabnzbd/config:/config
       - /mnt/nzb_media/Downloads:/downloads
       - /mnt/nzb_media/Downloads-incomplete:/incomplete-downloads
       - /home/proxdox/nzb:/nzb
@@ -23,7 +23,7 @@ services:
     ports:
       - 5076:5076
     volumes:
-      - /home/proxdox/nzb/hydra2:/config
+      - /home/plex/nzb/hydra2:/config
       - /mnt/nzb_media/Downloads:/downloads
     environment:
       - PGID=1000
