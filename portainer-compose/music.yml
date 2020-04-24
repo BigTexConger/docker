@@ -8,7 +8,7 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - /home/proxdox/nzb/lidarr/config:/config
+      - /home/plex/nzb/lidarr/config:/config
       - /shares/MyCloudEX2/Music:/music
       - /mnt/nzb_media/Downloads:/downloads
     ports:
@@ -22,9 +22,9 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - /home/proxdox/Music/airsonic/config:/config
+      - /home/plex/Music/airsonic/config:/config
       - /shares/MyCloudEX2/Music:/music
-      - /home/proxdox/Music/airsonic/playlists:/playlists
+      - /home/plex/Music/airsonic/playlists:/playlists
       - /shares/MyCloudEX2/Podcasts:/podcasts
     ports:
       - 4040:4040
