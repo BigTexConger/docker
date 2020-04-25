@@ -8,9 +8,9 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - /home/plex/nzb/lidarr/config:/config
-      - /shares/MyCloudEX2/Music:/music
-      - /mnt/nzb_media/Downloads:/downloads
+      - /mnt/user/appdata/lidarr/config:/config
+      - /mnt/disks/MyCloudEX2/Music:/music
+      - /mnt/cache/nzb_media/Downloads:/downloads
     ports:
       - 8686:8686
     restart: unless-stopped
@@ -22,10 +22,10 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - /home/plex/Music/airsonic/config:/config
-      - /shares/MyCloudEX2/Music:/music
-      - /home/plex/Music/airsonic/playlists:/playlists
-      - /shares/MyCloudEX2/Podcasts:/podcasts
+      - /mnt/user/appdata/airsonic/config:/config
+      - /mnt/disks/MyCloudEX2/Music:/music
+      - /mnt/user/appdata/airsonic/playlists:/playlists
+      - /mnt/disks/MyCloudEX2/Podcasts:/podcasts
     ports:
       - 4040:4040
     restart: unless-stopped
