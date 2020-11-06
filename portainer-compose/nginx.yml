@@ -12,9 +12,9 @@ services:
       - 81:81
     volumes:
       # Make sure this config.json file exists as per instructions above:
-      - /home/proxdox/nginex/config.json:/app/config/production.json
-      - /home/proxdox/nginex/data:/data
-      - /home/proxdox/nginex/letsencrypt:/etc/letsencrypt
+      - /mnt/user/appdata/nginx/config.json:/app/config/production.json
+      - /mnt/user/appdata/nginex/data:/data
+      - /mnt/user/appdata/nginex/letsencrypt:/etc/letsencrypt
     depends_on:
       - db
   db:
@@ -26,4 +26,4 @@ services:
       MYSQL_USER: "npm"
       MYSQL_PASSWORD: "npm"
     volumes:
-      - /home/proxdox/nginex/data/mysql:/var/lib/mysql
+      - /mnt/user/appdata/nginex/data/mysql:/var/lib/mysql
