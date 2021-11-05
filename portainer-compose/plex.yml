@@ -11,8 +11,8 @@ services:
     environment:
       - TZ=America/New_York
       - PLEX_CLAIM=claim-KTrWfMx__HS_SGA65GyT
-      - PLEX_UID=99
-      - PLEX_GID=100
+      - PLEX_UID=1000
+      - PLEX_GID=1000
     network_mode: host
     volumes:
       - Plex-Media-Server:/config
