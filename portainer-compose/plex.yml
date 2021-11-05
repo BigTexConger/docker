@@ -1,0 +1,23 @@
+version: '2'
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker
+    restart: unless-stopped
+    environment:
+      - TZ=America/New_York
+      - PLEX_CLAIM=claim-KTrWfMx__HS_SGA65GyT
+      - PLEX_UID=99
+      - PLEX_GID=100
+    network_mode: host
+    volumes:
+      - Plex-Media-Server:/config
+      - /transcode:/transcode
+      - /mnt/nas/MYCLOUD/Media:/MyCloud
+      - /mnt/nas/MYCLOUD/My_Passport/Media:/MyCloud_ext
+      - /mnt/nas/MYCLOUDEX2/Media:/MyCloudEX2
+      - /mnt/nas/MYCLOUDEX2/Media_2:/MyCloudEX2_2
+      - /mnt/nas/MYCLOUDEX2/easystore/Media:/MyCloudEX2_ext
+      
+
+
