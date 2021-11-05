@@ -1,4 +1,8 @@
 version: '2'
+
+volumes:
+  Plex-Media-Server:
+  
 services:
   plex:
     container_name: plex
